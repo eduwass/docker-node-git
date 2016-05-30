@@ -3,6 +3,9 @@ Docker Image with Node that will auto-pull codebase using the specified Git repo
 
 Copied some nice Git / Env vars functionalities from: [ngineered/nginx-php-fpm](https://github.com/ngineered/nginx-php-fpm) 
 
+### Docker Hub
+[https://hub.docker.com/r/eduwass/docker-node-git/](https://hub.docker.com/r/eduwass/docker-node-git/)
+
 ### Dynamically Pulling code from git
 One of the nice features of this container is its ability to pull code from a git repository with a couple of environmental variables passed at run time.
 
