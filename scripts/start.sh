@@ -59,3 +59,8 @@ if [ "$WP_ENV" != "development" ];then
   fi
 fi
 
+cd /usr/src/app
+# install deps
+npm install
+# start script
+npm start
