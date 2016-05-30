@@ -1,4 +1,4 @@
-FROM node:0.12.14-slim
+FROM node:0.12
 
 # Surpress Upstart errors/warning
 RUN dpkg-divert --local --rename --add /sbin/initctl
@@ -16,15 +16,18 @@ ADD scripts/pull /usr/bin/pull
 ADD scripts/push /usr/bin/push
 RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push
 
-# Start script
+# copy start script
 ADD scripts/start.sh /start.sh
 RUN chmod 755 /start.sh
 
 # npm install
 ONBUILD RUN npm install
+# run start script
+ONBUILD RUN bash /start.sh
 
 # Expose Ports
 EXPOSE 443
 EXPOSE 80
 
-CMD ["/bin/bash", "/start.sh"]
+# tell npm to run start script (defined in package.json)
+CMD ["npm", "start"]
