@@ -30,4 +30,5 @@ EXPOSE 443
 EXPOSE 80
 
 # tell npm to run start script (defined in package.json)
-CMD ["npm", "start"]
+# CMD ["npm", "start"]
+ONBUILD RUN npm start
