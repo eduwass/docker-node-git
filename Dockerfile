@@ -20,15 +20,9 @@ RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push
 ADD scripts/start.sh /start.sh
 RUN chmod 755 /start.sh
 
-# run start script
-ONBUILD RUN bash /start.sh
-# npm install
-ONBUILD RUN npm install
-
 # Expose Ports
 EXPOSE 443
 EXPOSE 80
 
-# tell npm to run start script (defined in package.json)
-# CMD ["npm", "start"]
-ONBUILD RUN npm start
+# run start script (defined in package.json)
+CMD ["/bin/bash", "/start.sh"]
