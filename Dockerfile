@@ -14,6 +14,8 @@ apt-get install -y git
 # Add git commands to allow container updating
 ADD scripts/pull /usr/bin/pull
 ADD scripts/push /usr/bin/push
+ADD scripts/docker-hook /usr/bin/docker-hook
+ADD scripts/hook-listener /usr/bin/hook-listener
 RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push
 
 # copy start script

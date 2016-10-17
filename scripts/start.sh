@@ -20,29 +20,9 @@ if [ ! -z "$DEBS" ]; then
  apt-get install -y $DEBS
 fi
 
-if [ "$WP_ENV" != "development" ];then
+# Dont pull code down if the .git folder exists
+if [ ! -d "/usr/src/app/.git" ];then
   # Pull down code form git for our site!
-  echo "        MMM.           .MMM"
-  echo "        MMMMMMMMMMMMMMMMMMM"
-  echo "        MMMMMMMMMMMMMMMMMMM      ___________________________________"
-  echo "       MMMMMMMMMMMMMMMMMMMMM    |                                   |"
-  echo "      MMMMMMMMMMMMMMMMMMMMMMM   | Git REPOS sync timez!!1           |"
-  echo "     MMMMMMMMMMMMMMMMMMMMMMMM   |_   _______________________________|"
-  echo "     MMMM::- -:::::::- -::MMMM    |/"
-  echo "      MM~:~   ~:::::~   ~:~MM"
-  echo " .. MMMMM::. .:::+:::. .::MMMMM .."
-  echo "       .MM::::: ._. :::::MM."
-  echo "          MMMM;:::::;MMMM"
-  echo "   -MM        MMMMMMM"
-  echo "   ^  M+     MMMMMMMMM"
-  echo "       MMMMMMM MM MM MM"
-  echo "            MM MM MM MM"
-  echo "            MM MM MM MM"
-  echo "         .~~MM~MM~MM~MM~~."
-  echo "      ~~~~MM:~MM~~~MM~:MM~~~~"
-  echo "     ~~~~~~==~==~~~==~==~~~~~~"
-  echo "      ~~~~~~==~==~==~==~~~~~~"
-  echo "          :~==~==~==~==~~"
   if [ ! -z "$GIT_REPO" ]; then
     rm /usr/src/app/*
     if [ ! -z "$GIT_BRANCH" ]; then
