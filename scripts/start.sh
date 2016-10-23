@@ -39,8 +39,5 @@ if [ ! -d "/usr/src/app/.git" ];then
   fi
 fi
 
-cd /usr/src/app
-# install deps
-npm install
-# start script
-npm start
+# Start supervisord and services
+/usr/bin/supervisord -n -c /etc/supervisord.conf
