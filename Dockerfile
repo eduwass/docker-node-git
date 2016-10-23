@@ -26,11 +26,10 @@ RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push
 
 # copy start script
 ADD scripts/start.sh /usr/bin/start.sh
-RUN chmod 755 /usr/bin/start.sh
 
 # Expose Ports (example: 80)
 EXPOSE 80
 EXPOSE 8555
 
-# run start script (defined in package.json)
+# run start script
 CMD ["/bin/bash", "/usr/bin/start.sh"]
