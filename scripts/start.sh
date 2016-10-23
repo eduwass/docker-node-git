@@ -46,5 +46,9 @@ if [ ! -d "/usr/src/app/.git" ];then
   fi
 fi
 
-# Start supervisord and services
+# Install npm dependencies
+cd /usr/src/app
+npm install
+
+# Start supervisord to start app and services
 /usr/bin/supervisord -n -c /etc/supervisord.conf
