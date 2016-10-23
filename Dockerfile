@@ -23,6 +23,8 @@ ADD scripts/push /usr/bin/push
 ADD scripts/docker-hook /usr/bin/docker-hook
 ADD scripts/hook-listener /usr/bin/hook-listener
 RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push
+RUN chmod +x /usr/bin/docker-hook
+RUN chmod +x /usr/bin/hook-listener
 
 # copy start script
 ADD scripts/start.sh /usr/bin/start.sh
