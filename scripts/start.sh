@@ -5,6 +5,13 @@
 mkdir -p -m 0700 /root/.ssh
 echo -e "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
+# Copy SSH key
+if [ ! -z "$SSH_KEY" ]; then
+ echo $SSH_KEY > /root/.ssh/id_rsa.base64
+ base64 -d /root/.ssh/id_rsa.base64 > /root/.ssh/id_rsa
+ chmod 600 /root/.ssh/id_rsa
+fi
+
 # Setup git variables
 if [ ! -z "$GIT_EMAIL" ]; then
  git config --global user.email "$GIT_EMAIL"
