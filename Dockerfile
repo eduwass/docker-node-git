@@ -11,6 +11,12 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
 apt-get install -y git
 
+# Install Supervisor
+RUN apt-get install -y supervisor
+
+# Copy supervisor config
+ADD conf/supervisord.conf /etc/supervisord.conf
+
 # Add git commands to allow container updating
 ADD scripts/pull /usr/bin/pull
 ADD scripts/push /usr/bin/push
