@@ -1,4 +1,4 @@
-FROM node:0.12
+FROM node:7.0
 
 # Surpress Upstart errors/warning
 RUN dpkg-divert --local --rename --add /sbin/initctl
