@@ -14,6 +14,10 @@ apt-get install -y git
 # Install Supervisor
 RUN apt-get install -y supervisor
 
+# Install/setup Python deps
+RUN apt-get install -y python-pip
+RUN pip install requests
+
 # Copy supervisor config
 ADD conf/supervisord.conf /etc/supervisord.conf
 
