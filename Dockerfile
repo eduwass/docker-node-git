@@ -4,12 +4,13 @@ FROM node:7.0
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -sf /bin/true /sbin/initctl
 
-# Let the conatiner know that there is no tty
+# Let the container know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install software requirements
 RUN apt-get update && \
 apt-get install -y git
+RUN npm install -g node-gyp
 
 # Install Supervisor
 RUN apt-get install -y supervisor
