@@ -50,5 +50,8 @@ fi
 cd /usr/src/app
 npm install
 
+# Run any commands passed by env
+eval $STARTUP_COMMANDS
+
 # Start supervisord to start app and services
 /usr/bin/supervisord -n -c /etc/supervisord.conf

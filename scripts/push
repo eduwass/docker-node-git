@@ -19,3 +19,6 @@ cd /usr/src/app
 git add *
 git commit -a -m "push from container $ts"
 git push
+
+# Run any commands after push
+eval $AFTER_PUSH_COMMANDS

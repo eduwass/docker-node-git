@@ -12,3 +12,6 @@ fi
 
 cd /usr/src/app
 git pull
+
+# Run any commands after pull
+eval $AFTER_PULL_COMMANDS

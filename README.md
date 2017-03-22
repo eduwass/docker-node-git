@@ -16,6 +16,9 @@ The following flags are a list of all the currently supported options that can b
  - **TEMPLATE_NGINX_HTML** : Enable by setting to 1 search and replace templating to happen on your code
  - **DOMAIN** : Set domain name for Lets Encrypt scripts
  - **GIT_HOOK_TOKEN** : Auth-Token used for the [docker-hook](https://github.com/schickling/docker-hook) listener
+ - **STARTUP_COMMANDS** : Add any commands that will be run at the end of the start.sh script
+ - **AFTER_PULL_COMMANDS** : Add any commands that will be run after pull
+ - **AFTER_PUSH_COMMANDS** : Add any commands that will be run after push
 
 ### Dynamically Pulling code from git
 One of the nice features of this container is its ability to pull code from a git repository with a couple of environmental variables passed at run time.
